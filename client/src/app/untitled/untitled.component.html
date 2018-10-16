@@ -1,0 +1,57 @@
+<div id='uGameBody'>
+  <div class='row mb-5'>
+    <div class='col-10 mb-5 offset-1'>
+      <img class='mb-5' id='uGameHeader' src='../../assets/images/projects/UGSignin.png'>
+    </div>
+  </div>
+  <h1 class='mt-5 display-3 text-center'>Untitled Game</h1>
+  <h3 class='mt-1 text-center'>Overview</h3>
+  <div class='row mt-5'>
+    <div class='col-6 text-center offset-3'>
+      <p>Untitled Game's foundation was begun a mere 5 weeks after beginning bootcamp, 3 weeks after starting the Python stack and 2 weeks after first becoming a full stack developer. As such there are many changes I would have made today; yet with that said there is some fascinating programming going on here, and some clever little tricks I would like to point out. The game is a classic turn-based multiplayer strategy game featuring unique classes, movement, attacks and health regen.</p>
+      <p>The opening screen - that which you see above - is absolutely gorgous and I must confess was not made by us (though we won't be monetizing the game), this is where users at seperate computers can join a game.</p>
+    </div>
+  </div>
+  <div class='spacerDiv'></div>
+  <div class='row'>
+    <div class='col-4 offset-1'>
+      <p><span class='stcBegin mt-4'>Being a multiplayer game </span>the first concern we have is loading players in. At the time, we settled upon having each player select a player and AJAX the server with their selection. Upon updating an indivual player it would simply update the group information. However when someone clicked on the 'start game' button, it would take the current state and perform the logic to initialize the game.</p>
+      <p><span class='stcBegin'>Though my least clean </span>project; that AJAX call isn't so bad, using JQuery's 'this' to activate the parent forms action while grabbing the individual inputs data and throwing them up to the server, one function four inputs.</p>
+      <p><span class='stcBegin'>Being a classic </span> RPG, this game is very OOP. Here's what a player selecting Rogue is getting. Low attack, high priority (this sets the turn order - rogue goes second only to the Bard). They are also automatically granted some equipment and certain cards which can be intelligently used for attack or defense. All child classes inherit from an abstract 'Character' class, which grants them methods like 'Move', 'Attack', 'DisplayInfo', and 'DisplayCards'</p>
+      <img src='../../assets/images/projects/UGCodeRogue.png' class='mt-5 UGCode'>
+    </div>
+    <div class='col-6'>
+      <img src='../../assets/images/projects/UGSelect.jpg' class='UGBox'>
+      <img src='../../assets/images/projects/UGCodeSelectKnight.png' class='mt-4 UGCode'>
+      <img src='../../assets/images/projects/UGCodeAjaxSelect.png' class='mt-4 UGCode'>
+    </div>
+  </div>
+  <div class='spacerDiv'></div>
+  <div class='row'>
+    <div class='col-6 offset-1'>
+      <img src='../../assets/images/projects/UGBegin.png' class='UGBox'>
+      <img src='../../assets/images/projects/UGCodePrepGame.png' class='UGCode mt-4'>
+    </div>
+    <div class='col-4'>
+      <p><span class='stcBegin'>And finally </span>we reach the map screen! A whole heck of a lot occurs in the game-prep sequence, but here's a quick rundown. </p>
+      <p><span class='stcBegin'>Following some less interesting </span>first bits; we load the map into our document. This is accomplished by calling a function which loads the appropriate from an object containing keys of map names, and values of 2.5d arrays (2d, but each value contains it's own array representing both the tile-type and whether a player is contained therein). When printing the map screen, each number represents a different tile. For ease of programming we set values 1-9 to be all non-traversable, 10-19 to be traversable, and 20-29 to be environmental effects (fire, doors, etc).</p>
+      <p><span class='stcBegin'>Once the map is loaded</span>, the players are set down on the four corners. In order of movement speed they are placed into the Ordered Dict which will be used shortly.</p>
+      <p><span class='stcBegin'>Finally the really tricky stuff. </span>We use the ordered dict from earlier and the Global keyword to set up a universally accessible Active player generator (seen below - generators are functions which saves their previous state). Genius! Probably the best part of this.</p>
+      <img src='../../assets/images/projects/UGCodeNewActive.png' class='UGCode mt-3'>
+    </div>
+  </div>
+  <div class='spacerDiv'></div>
+  <div class='row'>
+    <div class='col-4 offset-1'>
+      <p><span class='stcBegin'>Here you can see </span>the effect a "fight" play has on the game screen. Given that each of the divs are drawn in on a 2d matrix; we simply iterated through the surrounding map and overlayed a red filter to clarify which spots are under attack.</p>
+      <p><span class='stcBegin'>The other options are </span>move and rest. Rest simply iterates the players health up one, and move allows users to well...ya know. faster players can move further than others. Attack triggers this function with a parameter of the selected square (that 2-item array).</p>
+      <p><span class='stcBegin'>You'll notice that this attack </span>has to handle quite a few things. If the opposing square is empty it burns a card and responds 'No Enemy'. If the card used for attack plus the characters inherited attack is too low, they will be unable to do any damage.</p>
+      <p><span class='stcBegin'>If however </span>; the player is able to do damage this will update on the servers representation of the game and immediately return a JSON response to update the attacking character. A few seconds later the unfortunate defending player will AJAX a request to the server and feel the burn as their gamestate is updated.</p>
+    </div>
+    <div class='col-6'>
+      <img src='../../assets/images/projects/UGAttacking.png' class='UGBox'>
+      <img src='../../assets/images/projects/UGCodeFight.png' class='UGCode mt-3'>
+    </div>
+  </div>
+  <div class='spacerDiv'></div>
+</div>

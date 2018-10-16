@@ -1,0 +1,68 @@
+<div id='uDashBody'>
+    <div class='row mb-5'>
+      <div class='col-10 mb-5 offset-1'>
+        <img class='mb-5' id='uDashHeader' src='../../assets/images/projects/UDHomePage.png'>
+      </div>
+    </div>
+    <h1 class='mt-5 display-3 text-center'>User Dashboard</h1>
+    <h3 class='mt-1 text-center'>Overview</h3>
+    <div class='row mt-5'>
+      <div class='col-6 text-center offset-3'>
+        <p>User Dashboard is a web application amalgamating many common operations together in one package; these include secure sign in with validations, CRUD, Models and SQL relationships replicating a classic Facebook-type application (with some interesting extras thrown in). Note that this will soon be replaced with a more complex eCommerce-styled application.</p>
+        <p>The image above is the front page from which we begin. Let's walk through my application in the shoes of one Morgan Freeman; a true honor. Note that I will frequently clip out the linking navbar at the top - though it is always there for UX - for the improvement of this pages length and readability.</p>
+      </div>
+    </div>
+    <div class='spacerDiv'></div>
+    <div class='row'>
+      <div class='col-3 offset-1'>
+        <p><span class='stcBegin'>Wanting to</span> check on what all of his friends are doing Morgan Freeman loads up the new User Dash application. Not having an account he clicks 'start' which takes him to the sign in page.</p>
+        <p><span class='stcBegin'>Being overly excited</span>; Morgan fills out most of his information correctly, but accidentally types in the single characters 'M' and 'F' for his first and last names. Smartly, the website alerts him to this, and he quickly rectifies the issue.</p><br><br>
+        <p class='mt-5'><span class='stcBegin'>Notice that </span>following basic validations including simple length and regex parameters for the various input fields, passwords are immediately hashed using BCrypt before ever being stored in the database.</p>
+      </div>
+      <div class='col-3'>
+        <img src='../../assets/images/projects/UDSignIn.png' class='UDBox'>
+        <img src='../../assets/images/projects/UDBadReg.png' class='UDBox mt-4'>
+      </div>
+      <div class='col-4'>
+        <img src='../../assets/images/projects/UDCodeValidator.png' class='UDCode'>
+        <img src='../../assets/images/projects/UDCodeReg.png' class='mt-4 UDCode'>
+      </div>
+    </div>
+    <div class='spacerDiv'></div>
+    <div class='row'>
+      <div class='col-3 offset-1'>
+        <p><span class='stcBegin'>Having successfully </span>signed in Mr. Freeman is overjoyed to see all of the friends upon who's walls he can now comment! However he notices that two users; Top Turtle and Riley, have higher user privileges than himself. Disturbed he clicks on 'profile' at the top of his screen to correct this issue. </p>
+        <p><span class='stcBegin'>Morgan is pleased to see </span>that his information has been loaded into the input fields prior to his own interaction. However being a standard user he is unable to adjust his own user privileges, he leaves a curt note on Riley's wall.</p><br><br>
+        <p class='mt-5'><span class='stcBegin'>These code snippets </span>primarily show the use of session to retrieve data about the current user and react appropriately. Changes in the view include 'All Users' becoming 'Manage Users', while an additional column allowing the admin to edit and delete users is added. In the code above you may have noticed that the very first user to log in is automatically granted level 9. Finally the 'Delete message' option is only granted to the original creator of said message (and there is backend code to ensure users can't just mischievously type in the corresponding Delete URL GET request). </p>
+      </div>
+      <div class='col-3'>
+        <img src='../../assets/images/projects/UDCodeDash.png' class='UDCode'>
+        <img src='../../assets/images/projects/UDCodeDashView.png' class='UDCode mt-4'>
+      </div>
+      <div class='col-4'>
+        <img src='../../assets/images/projects/UDStandardDash.png' class='UDBox'>
+        <img src='../../assets/images/projects/UDStandardEdit.png' class='UDBox mt-4'>
+        <img src='../../assets/images/projects/UDMorganMessage.png' class='UDBox mt-4'>
+      </div>
+    </div>
+    <div class='spacerDiv'></div>
+    <div class='row'>
+      <div class='col-3 offset-1'>
+        <p>Quick note - Directly to the right you can see an example of "The Wall"; each user has one. Other users can post messages and replies on these walls. I'm using Slow Rabbits', as an example (for reason of my wall being extraordinarily long with test messages). Nonetheless it looks much the same.</p><br>
+        <p><span class='stcBegin'>While browsing my wall </span>, I notice a new message. Morgan seems steamed up - I immediately become fearful - and after posting a quick reply I select 'edit' in the admin 'actions' column. Being an admin I have access to editing every single user, with one more option than they have - 'User Level'. </p>
+        <p><span class='stcBegin'>Feeling apologetic </span> and short of breath, I change his admin privileges to match my own. At the bottom right you will notice that I have elevated Morgan, as is his birthright.</p><br><br>
+        <p class='mt-5'><span class='stcBegin'>The code </span>for this stuff is pretty standard. I do make sure that users cannot 'hack' a change by editing front-end HTML. The code to the right is simply the nested loop which prints out all of a users messages, comments, delete buttons on own-messages, and comment input-fields.</p>
+      </div>
+      <div class='col-3'>
+        <img src='../../assets/images/projects/UDWall.png' class='UDBox'>
+        <img src='../../assets/images/projects/UDCodeWallEdit.png' class='UDCode mt-3'>
+      </div>
+      <div class='col-4 text-center'>
+        <img src='../../assets/images/projects/UDMorganComment.png' class='UDBox'>
+        <img src='../../assets/images/projects/UDAdminEdit.png' class='UDBox mt-4' id='adminEdit'>
+        <img src='../../assets/images/projects/UDAdminDash.png' class='UDBox mt-4'>
+      </div>
+    </div>
+    <div class='spacerDiv'></div>
+    
+</div>

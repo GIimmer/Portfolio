@@ -1,0 +1,164 @@
+#mobileBody{
+    position: relative;
+    background-color: #ececec;
+    z-index: 0;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#mobileHeader{
+    position: relative;
+    top: -35px;
+    width: 100%;
+    height: 680px;
+}
+#splashHeader{
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    background-image: url('../../assets/images/cannonBackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(95%);
+}
+
+.spacerDiv{
+    height: 130px;
+}
+.boldify{
+    font-weight: bold;
+}
+.WBox{
+    box-shadow: 3px 4px 4px #555555;
+}
+
+h2{
+    text-align: center;
+}
+p{
+    font-size: 1.1em;
+    text-align: center;
+}
+#personalPic{
+    position: absolute;
+    box-shadow: 3px 4px 3px #111111;
+    top: 30%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    height: 225px;
+    border-radius: 50%;
+}
+#navBar{
+    position: fixed;
+    display: flex;
+    z-index: 6;
+    left: 0px;
+    right: 0px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+    margin-right: 17px;
+}
+.divLink{
+    flex: 0 1 auto;
+    background-color: rgba(32, 32, 32, 0.55);
+    text-align: center;
+    display: table;
+    font-size: 15px;
+    font-weight: bolder;
+    height: 35px;
+    width: 20%;
+    text-decoration: none;
+}
+.bR{
+    border-radius: 0px 0px 6px 0px;
+}
+.bL{
+    border-radius: 0px 0px 0px 6px;
+}
+.bRL{
+    border-radius: 0px 0px 6px 6px;
+}
+
+.divLink a{
+    display: table-cell;
+    vertical-align: middle;
+    color: rgb(202, 216, 255);
+}
+#navSpacer{
+    flex: 4 1 auto;
+}
+#aboutMe{
+    background-color: #ececec;
+}
+
+.stackHolder{
+    display: flex;
+    box-shadow: 2px 2px 6px grey;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 305px;
+    margin: 8px 0px;
+}
+.stackHolder h5{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+h5{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.stackHolder img{
+    width: 55px;
+}
+
+
+#pythonStack{
+    background-color: rgb(158, 218, 181);
+}
+#MEANStack{
+    background-color: rgb(255, 197, 197);
+}
+#aspNetStack{
+    background-color: rgb(166, 213, 255);
+}
+h5{
+    font-size: 1em;
+}
+#additionalHolder{
+    height: 270px;
+    display: flex;
+    margin-top: 21px;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#additionalHolder img{
+    width: 50px;
+    margin-top: 22px;
+}
+#additionalHolder h5{
+    margin-top: 12px;
+    font-weight: bolder;
+}
+.projectRow img{
+    background-size: contain;
+    width: 100%;
+}
+#downArrow{
+    width: 50px;
+    margin: 18px;
+}
+
+#UDReg{
+    width: 200px;
+}

@@ -1,0 +1,27 @@
+img{
+    width: 100%;
+    background-size: cover;
+}
+#uGameHeader{
+    filter: drop-shadow(8px 12px 4px rgb(109, 109, 109));
+}
+#uGameBody{
+    z-index: -1;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.stcBegin{
+    font-size: 13pt;
+    font-weight: bold;
+}
+.UGBox{
+    box-shadow: 4px 6px 12px #474747;
+}
+.UGCode{
+    box-shadow: 2px 3px 8px #474747;
+    border-radius: 3px;
+}
+.spacerDiv{
+    height: 300px;
+}

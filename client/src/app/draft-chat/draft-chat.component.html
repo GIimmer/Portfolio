@@ -1,0 +1,68 @@
+<div id='draftChatBody'>
+  <div class='row mb-5'>
+    <div class='col-10 mb-5 offset-1'>
+      <img class='mb-5 DCBox' id='draftHeader' src='../../assets/images/projects/DCsortQB.png'>
+    </div>
+  </div>
+  <h1 class='mt-5 display-3 text-center'>Draft Chat</h1>
+  <h3 class='mt-1 text-center'>Overview</h3>
+  <div class='row mt-5'>
+    <div class='col-6 text-center offset-3'>
+      <p>DraftChat is a Fantasy Football Draft simulator, allowing multiple users across different computers to join a draft and make picks against one another. This project is probably my best; featuring WebSockets, AJAX, interesting DB queries and some crunchy algorithms. </p>
+      <p>What you see above would be right after the beginning of a game, you'll notice that there are three players, each of these three players is actually an individual user on a unique computer. The position, team, and availability dropdowns all link to database queries, the table heads allow sorting by each category in both directions, the roster is filled dynamically, while both chat and recent picks are populated with sockets.</p>
+    </div>
+  </div>
+  <div class='spacerDiv'></div>
+  <div class='row'>
+    <div class='col-2 DCBox mt-3 ml-5'>
+      <img src='../../assets/images/projects/DCsockets.png'>
+    </div>
+    <div class='col-6'>
+      <img src='../../assets/images/projects/DCsocketsCode.png'>
+    </div>
+    <div class='col-3'>
+      <h3 class='mt-1 text-center'>WebSockets</h3>
+      <p class='mt-3'><span class='sentenceBegin'>ASP.NET features SignalR</span>, an upgrade to merely sockets, which integrates 4 technologies including Websockets, long polling, etc. SignalR uses a chathub to operate, shown here.</p>
+      <p class='mt-3'><span class='sentenceBegin'>UpdateDB</span> is a function called when a team hits the 'Draft' button. Not only does this update the database appropriately, but also iterates through the teams player-tables and adjusts player availability appropriately (so as not to force a reset).</p>
+      <p class='mt-3'><span class='sentenceBegin'>Update Turn</span> is the loop which updates each teams gamestate, revealing the draft button for the newly picking team, and hiding it from the previous. </p>
+      <p class='mt-3'><span class='sentenceBegin'>The rest </span>are all fairly straightforward. They keep messages, round countdown, and pick-history consistent on each screen.</p>
+    </div>
+  </div>
+  <div class='spacerDiv'></div>
+  <div class='row border'>
+    <div class='col-5 offset-1'>
+      <img class='mb-5 DCBox' src='../../assets/images/projects/DCRoster.png'>
+      <h3 class='mt-5 text-center'>Intelligent Loading</h3>
+      <p class='mt-3'><span class='sentenceBegin'>Associating players </span>with the correct position involved nothing special, but some trickily written traditional coding.</p>
+      <p class='mt-3'><span class='sentenceBegin'>Rather than </span>associating each player with individual viewbag entities we decided on a dictionary for cleaner code. We needed to do this in context of the players entire team however, because of the nature of loading.</p>
+      <p class='mt-3'><span class='sentenceBegin'>There can be </span>only one main QB, or Tight End, two Running Backs or Wide recievers, And if the FLEX spot is open that will take either a RB, TE, or WR but not QB. After that they all go to bench.</p>
+      <p class='mt-3'><span class='sentenceBegin'>Which leads us </span>to the rather tricky series of If/Elif/Else checks you see here. I wonder if it can be done more cleanly?</p>
+      
+    </div>
+    <div class='col-4 offset-1'>
+      <img src='../../assets/images/projects/DCrosterCode.png'>
+    </div>
+  </div>
+  <div class='spacerDiv'></div>
+  <div class='row '>
+    <div class='col-5 offset-1 mt-0'>
+      <img src='../../assets/images/projects/DCtableCode.png'>
+    </div>
+    <div class='col-5'>
+      <img class='DCBox mt-4 mb-5' src='../../assets/images/projects/DCplayerTable.png'>
+      <h3 class='mt-5 text-center'>Table Manipulation</h3>
+      <p class='mt-3'><span class='sentenceBegin'>I'm very excited </span>about this bit. All this code is mine, and was my biggest contribution. The top three options are database queries to reload the data, and each table header (except the last) performs a front-end merge-sort to rearrange the data appropriately and very quickly.</p>
+      <p class='mt-3'><span class='sentenceBegin'>The top three </span>options make AJAX calls based upon events triggered by JQuery listeners. AJAX was necessary because this is a one page app on ASP.NET, and the team data is sent along so that the rightmost column will repopulate with either buttons; or simply availability depending on the currently drafting player.</p>
+      <p class='mt-3'><span class='sentenceBegin'>The Fourth call </span>is much cleaner. Note that there is code repitition above (which I will be cleaning up) but not here. This call is triggered upon pressing a THead. Using JQuery's $(this) I am able to determine which attribute we are sorting by, whether to sort forward or reverse. Then I strip the DOM table object into an array so as to enable the splice operation and throw it into my merge sort algorithm.</p>
+      <p class='mt-3'><span class='sentenceBegin'>One function </span> is able to perform the splitting operations, then redirecting to one of two possible merging functions - (one for numbers and the other for strings). When the table rebuilds sorted it is returned to the 'fourth' function which rebuilds the table forward or in reverse depending on sort-order.</p>
+      <p class='mt-3'><span class='sentenceBegin'>Of note: </span>This was the first time I got really excited about implementing algorithms in such a way that was so easily visualized. I initially tried bubble sort, which took 45 seconds or so on all 572 items, merge sort takes a fraction of one. Also if interested; I wrote the algorithm which parsed the CSV into our database, a heck of an algoirthm that doesn't get much attention - would love to talk about that as well!</p>
+      <p id='separatedP'><span class='sentenceBegin'>Below I </span>will be showing what a 'mature' game might look like. Note both that the draft buttons are visible; as it is this teams turn. Also that they have sorted in reverse order by fantasy points on all available players - which is around 550 items.</p>   
+    </div>
+  </div>
+  <div class='spacerDiv'></div>
+  <div class='row'>
+    <div class='col-10 offset-1'>
+      <img class='DCBox' src='../../assets/images/projects/DCendGame.png'>
+    </div>
+  </div>
+</div>

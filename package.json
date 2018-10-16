@@ -1,0 +1,23 @@
+{
+  "name": "Port",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "jquery-parallax.js": "^1.5.0",
+    "mongoose": "^5.2.17",
+    "ng2-parallaxscroll": "^1.1.2",
+    "ng2-scroll-to": "^1.0.7",
+    "parallax-js": "^3.1.0",
+    "skrollr": "^0.6.26"
+  }
+}

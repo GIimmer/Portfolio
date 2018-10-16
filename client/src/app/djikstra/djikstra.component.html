@@ -1,0 +1,8 @@
+<div id='djikstraCont'>
+    <canvas (window:resize)="onResize($event)" (mousedown)='mouseDownFunc($event)' (mouseup)='mouseUpFunc($event)'></canvas>
+    <div id='option'  [routerLink]="['/mobile']" class='text-center' [ngStyle]="{'top.px': mpY, 'left.px': mpX}">
+        <p class='srndSingle mb-2 mt-3 ml-1'>Prefer a</p>
+        <p id='aesthetic' class='ml-2'>single page</p>
+        <p class='srndSingle mt-0 ml-1'>experience?</p>
+    </div>
+</div>

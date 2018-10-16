@@ -1,0 +1,26 @@
+img{
+    width: 100%;
+    background-size: cover;
+}
+#draftHeader{
+    /* filter:invert(90%) drop-shadow(8px 12px 4px rgb(109, 109, 109)); */
+}
+#draftChatBody{
+    z-index: -1;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.sentenceBegin{
+    font-size: 13pt;
+    font-weight: bold;
+}
+#separatedP{
+    margin-top: 500px;
+}
+.DCBox{
+    box-shadow: 3px 5px 12px #474747;
+}
+.spacerDiv{
+    height: 300px;
+}
