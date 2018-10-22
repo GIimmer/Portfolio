@@ -14,10 +14,8 @@ img {
     width: 100%;
     height: 7%;
     position: relative;
-    /* display: flex; */
     z-index: 5;
     flex-flow: row;
-    /* box-shadow: 1px 4px 8px #000000; */
     justify-content: space-between;
 }
 
@@ -29,7 +27,7 @@ img {
 .infoTag{
     color: #2e3131;
     width: 350px;
-    height: 110px;
+    height: 120px;
     position: absolute;
     margin-left: 20px;
     background-color: rgba(242,241,239,.95);
@@ -42,15 +40,23 @@ img {
     vertical-align: bottom;
 }
 .infoImg{
-    height: 40px;
-    width: 40px;
+    height: 28px;
+    width: 28px;
     margin-left: 20px;
     margin: 0 auto;
 }
 .infoHead{
-    /* margin-top: 4px;
-    margin-bottom: 0px; */
-    font-size: 18pt;
+    font-size: 22pt;
+    color: #02122a;
+}
+.infoTop{
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+.infoBottom{
+    margin-bottom: 12px;
+    margin-top: 10px;
+
 }
 .infoLogo{
     width: 28px;
@@ -94,8 +100,8 @@ img {
     min-width: 356px;
 }
 .active-cyan-4 input[type=text]:focus:not([readonly]) {
-    border: 1px solid #4dd0e1;
-    box-shadow: 0 0 0 1px #4dd0e1;
+    border: 1px solid #9ec5ff;
+    box-shadow: 0 0 0 1px #9ec5ff;
     width: 280px;
     top: 8px;
 }
@@ -109,9 +115,12 @@ img {
     height: 25px;
     cursor: pointer;
     background-size: contain;
+    -webkit-filter: drop-shadow(3px 2px 1px #aaa);
+    filter:         drop-shadow(3px 2px 1px #aaa);
 }
 .searchBarIcon:hover {
-    background-color: rgb(228, 228, 228);
+    -webkit-filter: drop-shadow(2px 1px 1px #aaa);
+    filter:         drop-shadow(2px 1px 1px #aaa);
 }
 
 #searchDiv{
@@ -144,7 +153,7 @@ ul{
     padding-left: 0;
 }
 .searchSuggest:hover {
-    background-color: rgb(213, 255, 255);
+    background-color: #cee2ff !important;
 }
 #searchOutcome{
     width: 280px;

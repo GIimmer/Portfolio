@@ -35,7 +35,7 @@ export class DjikstraComponent implements OnInit {
   endReference: any = {
     'about': 1,
     'uGame': 4,
-    'eCommerce': 2,
+    'userDash': 2,
     'draftChat': 3
   }
   mouse: any = {
@@ -49,6 +49,10 @@ export class DjikstraComponent implements OnInit {
     ) {}
 
   ngOnInit() {
+    let isMobile = this.detectmob();
+    if(isMobile == true){
+      window.location.href = "http://google.com";
+    }
     this.subscription = this._djikstraService.clickLink.subscribe((value)=> {
       this.animating = false;
       this.t = 1;
@@ -57,6 +61,13 @@ export class DjikstraComponent implements OnInit {
       this.prepareDjikstra();
     });
     this.showCanvas();
+  }
+  detectmob() {
+    if(window.innerWidth <= 1225 || window.innerHeight <= 650) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   ngAfterViewInit(){
@@ -80,15 +91,15 @@ export class DjikstraComponent implements OnInit {
     if(this.newStarCounter > 10){
       return;
     }
-    let innerRadius = Math.floor(Math.random()*1 + 3);
-    let outerRadius = Math.floor(Math.random()*2 + 6);
+    let innerRadius = Math.floor(Math.random()*1 + 2);
+    let outerRadius = Math.floor(Math.random()*2 + 5);
     let spikes = Math.floor(Math.random()*2 + 5);
     let x: number = this.mouseDown.x;
     let y: number = this.mouseDown.y - (window.innerHeight*.07);
     let midX = this.canvas.width/2;
     let midY = this.canvas.height/2;
-    let dx = (this.mouseDown.x - this.mouseUp.x) * .02;
-    let dy = (this.mouseDown.y - this.mouseUp.y) * .02;
+    let dx = (this.mouseDown.x - this.mouseUp.x) * .01;
+    let dy = (this.mouseDown.y - this.mouseUp.y) * .01;
     let counter = Math.floor(Math.random()*150)
     this.shapeArray.push(new Meteor(x, y, dx, dy, midX, midY, spikes, innerRadius, outerRadius, counter));
     this.newStarCounter++;
@@ -140,7 +151,7 @@ export class DjikstraComponent implements OnInit {
     this.ctx.beginPath();
     this.ctx.moveTo(this.points[this.t-1].x,this.points[this.t-1].y);
     this.ctx.lineTo(this.points[this.t].x,this.points[this.t].y);
-    this.ctx.lineWidth = 2;
+    this.ctx.lineWidth = 1;
     // this.ctx.strokeStyle = "#f75400";
     this.ctx.strokeStyle = "#f7b900";
     this.ctx.stroke();
@@ -217,18 +228,18 @@ export class DjikstraComponent implements OnInit {
       starX = this.canvas.width - 60,
       midX = (this.canvas.width/2),
       midY = (this.canvas.height/2),
-      starMaker = [[midX, midY],[60,20, 'about'], [starX,20, 'draftChat'], [60,starY, 'eCommerce'], [starX,starY, 'unTitled']];
+      starMaker = [[midX, midY],[60,20, 'about'], [starX,20, 'draftChat'], [60,starY, 'userDash'], [starX,starY, 'unTitled']];
     this.mpX = midX - 100;
     this.mpY = midY - 100;
     for(let star of starMaker){
-      let newStar = new Star(star[0], star[1], 5, 15, 3)
+      let newStar = new Star(star[0], star[1], 5, 15, 3);
       this.shapeArray.push(newStar);
       // this.endReference[star[2]] = newStar;
     }
-    for(let i = 0; i < 95; i++){
-      let innerRadius = Math.floor(Math.random()*1 + 3);
-      let outerRadius = Math.floor(Math.random()*2 + 5);
-      let spikes = Math.floor(Math.random()*2 + 4);
+    for(let i = 0; i < 105; i++){
+      let innerRadius = Math.floor(Math.random()*2 + 1);
+      let outerRadius = Math.floor(Math.random()*9 + 2);
+      let spikes = Math.floor(Math.random()*1.2 + 4);
       let x: number;
       let y: number;
       let valid = false;
@@ -239,9 +250,9 @@ export class DjikstraComponent implements OnInit {
           valid = true;
         }
       }
-      let dx = (Math.random() - 0.5) * .5;
-      let dy = (Math.random() - 0.5) * .5;
-      let counter = Math.floor(Math.random()*150)
+      let dx = (Math.random() - 0.5) * .4;
+      let dy = (Math.random() - 0.5) * .4;
+      let counter = Math.floor(Math.random()*450)
       this.shapeArray.push(new nodeStar(x, y, dx, dy, midX, midY, spikes, innerRadius, outerRadius, counter));
     }
   }

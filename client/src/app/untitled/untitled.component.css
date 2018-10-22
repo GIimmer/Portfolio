@@ -25,3 +25,24 @@ img{
 .spacerDiv{
     height: 300px;
 }
+
+#scrollSuggest{
+    position: absolute;
+    width: 50px;
+    bottom: 7%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    margin: 0 auto;
+    height: 40px;
+}
+.backToTop{
+    position: absolute;
+    bottom: 7%;
+    right: 17px;
+    height: 40px;
+    width: 40px;
+    z-index: 20;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}

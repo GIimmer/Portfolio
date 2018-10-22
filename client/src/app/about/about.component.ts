@@ -1,4 +1,5 @@
 import { Component, OnInit, NgZone } from '@angular/core';
+import {ScrollToModule} from 'ng2-scroll-to';
 import * as $ from 'jquery';
 
 @Component({
@@ -16,6 +17,8 @@ export class AboutComponent implements OnInit {
   jWhere: string;
   jHome: string;
   distance: number = -150;
+  dScrollSuggest: boolean = true;
+  dScrollUp: boolean = false;
   appendation: string = 'url(../../assets/images/jLove.jpg';
 
   
@@ -40,36 +43,48 @@ export class AboutComponent implements OnInit {
   scroll = (): void => {
       if (true) {
          this.ngZone.run(() => {
+            this.dScrollSuggest = false;
             this.scrollW = $(document.getElementById('aboutBody'));
             if(this.scrollW[0].scrollTop < 550){
               this.distance = -150 + (this.scrollW[0].scrollTop * .25);
             }
+
             let proximity = ((this.scrollW[0].scrollHeight- this.scrollW[0].clientHeight )- this.scrollW[0].scrollTop);
             if(proximity < 750){
+              console.log("This dscrollup is: ", this.dScrollUp);
+              this.dScrollUp = true;
               if(proximity > 560){
                 this.jLove = '#bf4c81';
                 this.jBeginning = '#cccccc';
+                this.jRebirth = '#cccccc';
                 this.appendation = 'url(../../assets/images/jLove.jpg';
               } else if(proximity > 475){
                 this.jBeginning = '#79bf4c';
                 this.jRebirth = '#cccccc';
                 this.jLove = '#cccccc';
+                this.jWhere = '#cccccc';
                 this.appendation = 'url(../../assets/images/jBeginning.jpg';
               } else if(proximity >= 250){
                 this.jRebirth = '#54b9d8';
                 this.jBeginning = '#cccccc';
                 this.jWhere = '#cccccc';
+                this.jHome = '#cccccc';
+                this.jLove = '#cccccc';
                 this.appendation = 'url(../../assets/images/jRebirth.jpg';
-              } else if(proximity >= 75){
+              } else if(proximity >= 95){
                 this.jWhere = '#efbc3b';
+                this.jBeginning = '#cccccc';
                 this.jRebirth = '#cccccc';
                 this.jHome = '#cccccc';
                 this.appendation = 'url(../../assets/images/jWhere.jpg';
               } else{
                 this.jHome = '#337c40';
+                this.jRebirth = '#cccccc';
                 this.jWhere = '#cccccc';
                 this.appendation = 'url(../../assets/images/jHome.jpg';
               }
+            } else {
+              this.dScrollUp = false;
             }
          });
       }

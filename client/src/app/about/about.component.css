@@ -16,8 +16,6 @@ p{
 }
 
 #splashHeader{
-    /* background-image: url("../../assets/images/cityBackground.jpg"); */
-    /* background-size: 100% 100%; */
     background-size: auto 100%;
     position: absolute;
     z-index: -2;
@@ -40,6 +38,8 @@ p{
 }
 #rightCol{
     width: 450px;
+    white-space: nowrap;
+    overflow: visible;
 }
 #gotTimeHeader{
     width: 100%;
@@ -124,4 +124,22 @@ p{
 	width: 100%;
 	margin-top: -300px;
 	z-index: 1;
+}
+#scrollSuggest{
+    position: absolute;
+    bottom: 7%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    margin: 0 auto;
+    height: 40px;
+}
+.backToTop{
+    position: absolute;
+    bottom: 7%;
+    right: 0;
+    height: 40px;
+    z-index: 10;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }

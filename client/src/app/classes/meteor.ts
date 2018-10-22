@@ -29,9 +29,9 @@ export class Meteor {
         let incredibleSpeed = Math.abs(dx) + Math.abs(dy);
         for(let color of this.colorArr){
             if(Math.floor(incredibleSpeed*15)<180){
-                color[0] += Math.floor(incredibleSpeed*16);
-                color[1] -= Math.floor(incredibleSpeed)
-                color[2] -= Math.floor(incredibleSpeed);
+                color[0] += Math.floor(incredibleSpeed*32);
+                color[1] -= Math.floor(incredibleSpeed*2);
+                color[2] -= Math.floor(incredibleSpeed*2);
             } else {
                 color[0] = 255;
                 color[1] = 40;

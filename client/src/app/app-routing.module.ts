@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: "djikstra", component: DjikstraComponent},
   {path: "about", component: AboutComponent},
   {path: "draftChat", component: DraftChatComponent},
-  {path: "eCommerce", component: ECommerceComponent},
+  {path: "userDash", component: ECommerceComponent},
   {path: "uGame", component: UntitledComponent},
 
   {path: "mobile", component: MobileComponent},

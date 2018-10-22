@@ -96,9 +96,9 @@ export class nodeStar {
         if((Math.pow((this.midX-this.x), 2) + Math.pow((this.midY-this.y), 2)) < 10816 ){
             this.resolveCollision();
         }
-        if(this.counter > 150){
-            this.counter = 0;
+        if(this.counter>=450){
             this.color = this.colorArr[Math.floor(Math.random()*this.colorArr.length)];
+            this.counter = 0;
         }
         this.x += this.dx;
         this.y += this.dy

@@ -1,7 +1,9 @@
 <div id='uDashBody'>
+    <img src='../../assets/images/keepScrolling.gif' id='scrollSuggest' *ngIf="dScrollSuggest">
+    <a scrollTo href='#uDashHeader' class='backToTop'><img src='../../assets/images/backToTop.png' *ngIf="dScrollUp" class='backToTop'></a>
     <div class='row mb-5'>
       <div class='col-10 mb-5 offset-1'>
-        <img class='mb-5' id='uDashHeader' src='../../assets/images/projects/UDHomePage.png'>
+        <img class='mb-5' id='uDashHeader' src='../../assets/images/projects/UDHomePage.png' alt='Home screen of game'>
       </div>
     </div>
     <h1 class='mt-5 display-3 text-center'>User Dashboard</h1>
@@ -10,6 +12,7 @@
       <div class='col-6 text-center offset-3'>
         <p>User Dashboard is a web application amalgamating many common operations together in one package; these include secure sign in with validations, CRUD, Models and SQL relationships replicating a classic Facebook-type application (with some interesting extras thrown in). Note that this will soon be replaced with a more complex eCommerce-styled application.</p>
         <p>The image above is the front page from which we begin. Let's walk through my application in the shoes of one Morgan Freeman; a true honor. Note that I will frequently clip out the linking navbar at the top - though it is always there for UX - for the improvement of this pages length and readability.</p>
+        <a href='https://github.com/GIimmer/User_dashboard' target='_blank'>On GitHub..</a>
       </div>
     </div>
     <div class='spacerDiv'></div>
@@ -20,12 +23,12 @@
         <p class='mt-5'><span class='stcBegin'>Notice that </span>following basic validations including simple length and regex parameters for the various input fields, passwords are immediately hashed using BCrypt before ever being stored in the database.</p>
       </div>
       <div class='col-3'>
-        <img src='../../assets/images/projects/UDSignIn.png' class='UDBox'>
-        <img src='../../assets/images/projects/UDBadReg.png' class='UDBox mt-4'>
+        <img src='../../assets/images/projects/UDSignIn.png' class='UDBox' alt='Sign in options'>
+        <img src='../../assets/images/projects/UDBadReg.png' class='UDBox mt-4' alt='Improper sign in feedback'>
       </div>
       <div class='col-4'>
-        <img src='../../assets/images/projects/UDCodeValidator.png' class='UDCode'>
-        <img src='../../assets/images/projects/UDCodeReg.png' class='mt-4 UDCode'>
+        <img src='../../assets/images/projects/UDCodeValidator.png' class='UDCode' alt='Validation code'>
+        <img src='../../assets/images/projects/UDCodeReg.png' class='mt-4 UDCode' alt='Code for successful registration'>
       </div>
     </div>
     <div class='spacerDiv'></div>
@@ -36,13 +39,13 @@
         <p class='mt-5'><span class='stcBegin'>These code snippets </span>primarily show the use of session to retrieve data about the current user and react appropriately. Changes in the view include 'All Users' becoming 'Manage Users', while an additional column allowing the admin to edit and delete users is added. In the code above you may have noticed that the very first user to log in is automatically granted level 9. Finally the 'Delete message' option is only granted to the original creator of said message (and there is backend code to ensure users can't just mischievously type in the corresponding Delete URL GET request). </p>
       </div>
       <div class='col-3'>
-        <img src='../../assets/images/projects/UDCodeDash.png' class='UDCode'>
-        <img src='../../assets/images/projects/UDCodeDashView.png' class='UDCode mt-4'>
+        <img src='../../assets/images/projects/UDCodeDash.png' class='UDCode' alt='Code for main dashboard server'>
+        <img src='../../assets/images/projects/UDCodeDashView.png' class='UDCode mt-4' alt='Code for main dashboard view'>
       </div>
       <div class='col-4'>
-        <img src='../../assets/images/projects/UDStandardDash.png' class='UDBox'>
-        <img src='../../assets/images/projects/UDStandardEdit.png' class='UDBox mt-4'>
-        <img src='../../assets/images/projects/UDMorganMessage.png' class='UDBox mt-4'>
+        <img src='../../assets/images/projects/UDStandardDash.png' class='UDBox' alt='The main dashboard view'>
+        <img src='../../assets/images/projects/UDStandardEdit.png' class='UDBox mt-4' alt='What editing own profile looks like as user'>
+        <img src='../../assets/images/projects/UDMorganMessage.png' class='UDBox mt-4' alt='Message from Mr. Freeman to Riley'>
       </div>
     </div>
     <div class='spacerDiv'></div>
@@ -54,13 +57,13 @@
         <p class='mt-5'><span class='stcBegin'>The code </span>for this stuff is pretty standard. I do make sure that users cannot 'hack' a change by editing front-end HTML. The code to the right is simply the nested loop which prints out all of a users messages, comments, delete buttons on own-messages, and comment input-fields.</p>
       </div>
       <div class='col-3'>
-        <img src='../../assets/images/projects/UDWall.png' class='UDBox'>
-        <img src='../../assets/images/projects/UDCodeWallEdit.png' class='UDCode mt-3'>
+        <img src='../../assets/images/projects/UDWall.png' class='UDBox' alt='Picture of a users comment wall'>
+        <img src='../../assets/images/projects/UDCodeWallEdit.png' class='UDCode mt-3' alt='Code for Users wall'>
       </div>
       <div class='col-4 text-center'>
-        <img src='../../assets/images/projects/UDMorganComment.png' class='UDBox'>
-        <img src='../../assets/images/projects/UDAdminEdit.png' class='UDBox mt-4' id='adminEdit'>
-        <img src='../../assets/images/projects/UDAdminDash.png' class='UDBox mt-4'>
+        <img src='../../assets/images/projects/UDMorganComment.png' class='UDBox' alt='Picture of Morgans comment'>
+        <img src='../../assets/images/projects/UDAdminEdit.png' class='UDBox mt-4' id='adminEdit' alt='What Admins edit-screen looks like'>
+        <img src='../../assets/images/projects/UDAdminDash.png' class='UDBox mt-4' alt='What admin Dashboard looks like'>
       </div>
     </div>
     <div class='spacerDiv'></div>

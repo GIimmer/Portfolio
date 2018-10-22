@@ -1,7 +1,9 @@
 <div id='draftChatBody'>
+  <img src='../../assets/images/keepScrolling.gif' id='scrollSuggest' *ngIf="dScrollSuggest">
+  <a scrollTo href='#draftHeader' class='backToTop'><img src='../../assets/images/backToTop.png' *ngIf="dScrollUp" class='backToTop'></a>
   <div class='row mb-5'>
     <div class='col-10 mb-5 offset-1'>
-      <img class='mb-5 DCBox' id='draftHeader' src='../../assets/images/projects/DCsortQB.png'>
+      <img class='mb-5 DCBox' id='draftHeader' src='../../assets/images/projects/DCsortQB.png' alt='Image of DraftChat earlygame'>
     </div>
   </div>
   <h1 class='mt-5 display-3 text-center'>Draft Chat</h1>
@@ -10,15 +12,16 @@
     <div class='col-6 text-center offset-3'>
       <p>DraftChat is a Fantasy Football Draft simulator, allowing multiple users across different computers to join a draft and make picks against one another. This project is probably my best; featuring WebSockets, AJAX, interesting DB queries and some crunchy algorithms. </p>
       <p>What you see above would be right after the beginning of a game, you'll notice that there are three players, each of these three players is actually an individual user on a unique computer. The position, team, and availability dropdowns all link to database queries, the table heads allow sorting by each category in both directions, the roster is filled dynamically, while both chat and recent picks are populated with sockets.</p>
+      <a href='https://github.com/WhoaDuh/DraftChat' target='_blank'>On GitHub..</a>
     </div>
   </div>
   <div class='spacerDiv'></div>
   <div class='row'>
     <div class='col-2 DCBox mt-3 ml-5'>
-      <img src='../../assets/images/projects/DCsockets.png'>
+      <img src='../../assets/images/projects/DCsockets.png' alt='Image of DraftChat web sockets chat'>
     </div>
     <div class='col-6'>
-      <img src='../../assets/images/projects/DCsocketsCode.png'>
+      <img src='../../assets/images/projects/DCsocketsCode.png' alt='Image of Code for web sockets'>
     </div>
     <div class='col-3'>
       <h3 class='mt-1 text-center'>WebSockets</h3>
@@ -31,7 +34,7 @@
   <div class='spacerDiv'></div>
   <div class='row border'>
     <div class='col-5 offset-1'>
-      <img class='mb-5 DCBox' src='../../assets/images/projects/DCRoster.png'>
+      <img class='mb-5 DCBox' src='../../assets/images/projects/DCRoster.png' alt='Image of player table'>
       <h3 class='mt-5 text-center'>Intelligent Loading</h3>
       <p class='mt-3'><span class='sentenceBegin'>Associating players </span>with the correct position involved nothing special, but some trickily written traditional coding.</p>
       <p class='mt-3'><span class='sentenceBegin'>Rather than </span>associating each player with individual viewbag entities we decided on a dictionary for cleaner code. We needed to do this in context of the players entire team however, because of the nature of loading.</p>
@@ -40,16 +43,16 @@
       
     </div>
     <div class='col-4 offset-1'>
-      <img src='../../assets/images/projects/DCrosterCode.png'>
+      <img src='../../assets/images/projects/DCrosterCode.png' alt='Image of code for player table'>
     </div>
   </div>
   <div class='spacerDiv'></div>
   <div class='row '>
     <div class='col-5 offset-1 mt-0'>
-      <img src='../../assets/images/projects/DCtableCode.png'>
+      <img src='../../assets/images/projects/DCtableCode.png' alt='Image of code for table containing playerData'>
     </div>
     <div class='col-5'>
-      <img class='DCBox mt-4 mb-5' src='../../assets/images/projects/DCplayerTable.png'>
+      <img class='DCBox mt-4 mb-5' src='../../assets/images/projects/DCplayerTable.png' alt='Image of table containing playerData'>
       <h3 class='mt-5 text-center'>Table Manipulation</h3>
       <p class='mt-3'><span class='sentenceBegin'>I'm very excited </span>about this bit. All this code is mine, and was my biggest contribution. The top three options are database queries to reload the data, and each table header (except the last) performs a front-end merge-sort to rearrange the data appropriately and very quickly.</p>
       <p class='mt-3'><span class='sentenceBegin'>The top three </span>options make AJAX calls based upon events triggered by JQuery listeners. AJAX was necessary because this is a one page app on ASP.NET, and the team data is sent along so that the rightmost column will repopulate with either buttons; or simply availability depending on the currently drafting player.</p>
@@ -62,7 +65,7 @@
   <div class='spacerDiv'></div>
   <div class='row'>
     <div class='col-10 offset-1'>
-      <img class='DCBox' src='../../assets/images/projects/DCendGame.png'>
+      <img class='DCBox' src='../../assets/images/projects/DCendGame.png' alt='Image from around endgame'>
     </div>
   </div>
 </div>
