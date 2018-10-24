@@ -55,6 +55,9 @@ p{
     z-index: -1;
     background-color: #ececec;
 }
+.colorify{
+    background-color: #ececec;
+}
 .cheeky{
     height: 90px;
 }

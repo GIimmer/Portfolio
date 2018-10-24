@@ -1,7 +1,7 @@
 <div id='container'>
   <div class='flexEdge d-none d-xl-flex' [ngStyle]="{'box-shadow': upperShadow}">
     <div class='clicker'>
-      <div class='infoTag row pt-4' id='aboutTag' (click)="click('about')" (mouseenter)="hover('about')" (mouseleave)="unHover()" [ngStyle]="{'bottom': Hover['about']+'px'}">
+      <div class='infoTag upperTag row pt-4' (click)="click('about')" (mouseenter)="hover('about')" (mouseleave)="unHover()" [ngStyle]="{'bottom': Hover['about']+'px', 'box-shadow': upperShadow}">
         <div class='col-12'>
           <div class='row mb-0'>
             <span class='col-6 text-center'>
@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class='clicker'>
-      <div class='infoTag pt-4 row' id='aboutTag' (click)="click('userDash')" (mouseenter)="hover('userDash')" (mouseleave)="unHover()" [ngStyle]="{'bottom': Hover['userDash']+'px'}">
+      <div class='infoTag upperTag row pt-4' (click)="click('userDash')" (mouseenter)="hover('userDash')" (mouseleave)="unHover()" [ngStyle]="{'bottom': Hover['userDash']+'px', 'box-shadow': upperShadow}">
         <div class='col-12'>
           <div class='row mb-0'>
             <p class='infoText col-5 border-right border-dark text-center'>WebApp imitating classic S. Media</p>
@@ -57,7 +57,7 @@
   </div>
   <div class='flexEdge d-none d-xl-flex' [ngStyle]="{'box-shadow': lowerShadow}">
     <div class='clicker'>
-      <div class='infoTag pb-4 row' id='eCommTag' (click)="click('draftChat')" (mouseenter)="hover('draftChat')" (mouseleave)="unHover()" [ngStyle]="{'top': Hover['draftChat']+'px', 'position': 'relative'}">
+      <div class='infoTag lowerTag pb-4 row' (click)="click('draftChat')" (mouseenter)="hover('draftChat')" (mouseleave)="unHover()" [ngStyle]="{'top': Hover['draftChat']+'px', 'position': 'relative', 'box-shadow': upperShadow}">
         <h3 class='infoHead infoBottom text-center col-10 offset-1'>Draft Chat</h3>
         <div class='col-12'>
           <div class='row mt-1'>
@@ -77,7 +77,7 @@
     <div class='quickSort'>
     </div>
     <div class='clicker'>
-      <div class='infoTag pb-4 row' id='untitled' (click)="click('uGame')" (mouseenter)="hover('uGame')" (mouseleave)="unHover()" [ngStyle]="{'top': Hover['uGame']+'px', 'position': 'relative'}">
+      <div class='infoTag lowerTag pb-4 row' (click)="click('uGame')" (mouseenter)="hover('uGame')" (mouseleave)="unHover()" [ngStyle]="{'top': Hover['uGame']+'px', 'box-shadow': upperShadow, 'position': 'relative'}">
         <h3 class='infoHead infoBottom text-center col-10 offset-1'>uGame</h3>
         <div class='col-12'>
           <div class='row mt-1'>

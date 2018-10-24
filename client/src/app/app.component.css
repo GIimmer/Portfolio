@@ -21,19 +21,23 @@ img {
 
 .clicker{
     width: 390px;
-    background-color: #ececec;
-
+    background-color: #e5e5e5;
 }
 .infoTag{
     color: #2e3131;
     width: 350px;
-    height: 120px;
+    height: 125px;
     position: absolute;
     margin-left: 20px;
-    background-color: rgba(242,241,239,.95);
+    background-color: rgba(240, 240, 240, 1);
     font-size: 11pt;
-    border-radius: 12px;
     cursor: pointer;
+}
+.upperTag{
+    border-radius: 0px 0px 42px 42px;
+}
+.lowerTag{
+    border-radius: 42px 42px 0px 0px;
 }
 .infoText{
     line-height: .95;
@@ -47,15 +51,17 @@ img {
 }
 .infoHead{
     font-size: 22pt;
-    color: #02122a;
+    font-weight: 100;
+    font-family: 'Raleway', sans-serif;
 }
 .infoTop{
-    margin-top: 12px;
-    margin-bottom: 10px;
+    margin-top: 14px;
+    bottom: 0px !important;
+    margin-bottom: 0px;
 }
 .infoBottom{
-    margin-bottom: 12px;
-    margin-top: 10px;
+    margin-bottom: 16px;
+    top: 6px;
 
 }
 .infoLogo{
@@ -65,7 +71,7 @@ img {
 
 
 .searchBar{
-    background-color: #ececec;
+    background-color: #e5e5e5;
     position: relative;
     flex: 2 1 auto;
 }
@@ -75,10 +81,9 @@ img {
     width: 100%;
     overflow: hidden;
     height: 100%;
-    /* box-shadow: 0px 8px 6px #777777; */
 }
 .quickSort{
-    background-color: #ececec;
+    background-color: #e5e5e5;
     flex: 2 1 auto;
 }
 
@@ -94,7 +99,7 @@ img {
     max-width: 400px;
     margin: 0 auto;
     border-radius: 6px;
-    background-color: #fff;
+    background-color: #e5e5e5;
 }
 .active-cyan-4{
     min-width: 356px;
@@ -145,7 +150,7 @@ img {
     z-index: 6;
 }
 .searchSuggest{
-    background-color: #ececec;
+    background-color: #e5e5e5;
     cursor: pointer;
 }
 ul{
@@ -161,5 +166,5 @@ ul{
     max-height: 175px;
     border-radius: 5px;
     z-index: 21;
-    background-color: white;
+    background-color: #e5e5e5;
 }

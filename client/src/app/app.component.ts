@@ -2,6 +2,7 @@ import { Component, OnInit, ContentChild, ViewChild } from '@angular/core';
 import { DjikstraService } from './djikstra.service';
 import { Router } from '@angular/router';
 import { Trie } from './classes/trie';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -24,10 +25,10 @@ export class AppComponent implements OnInit {
   lowerShadow: string = '0px -4px 8px #000000';
   myTrie: Trie;
   Hover: any = {
-    'about': 5,
-    'userDash': 5,
-    'uGame': 0,
-    'draftChat': 0
+    'about':5,
+    'userDash':5,
+    'uGame':5,
+    'draftChat':5
   }
   constructor(
     private _djikstraService: DjikstraService,
@@ -39,6 +40,8 @@ export class AppComponent implements OnInit {
     if(isMobile == true){
       this.contentHeight = '100%';
       this._router.navigate(['/mobile']);
+    } else {
+      $(".infoTag").delay(2600).fadeOut().fadeIn();
     }
     this.searchInput = { content: "" };
     this.setUpTrie();
@@ -56,8 +59,8 @@ export class AppComponent implements OnInit {
     this._djikstraService.hoverLink.next(link);
   }
   animateTag(){
-    while(this.Hover[this.whichHover] > -60){
-      this.Hover[this.whichHover] -=5;
+    while(this.Hover[this.whichHover] > -55){
+      this.Hover[this.whichHover] -=1;
     }
     return;
   }
@@ -75,9 +78,9 @@ export class AppComponent implements OnInit {
 
   public unHover(){
     if(this.whichHover == 'about' || this.whichHover == 'userDash'){
-      this.Hover[this.whichHover] = 5;
+      this.Hover[this.whichHover] =5;
     } else {
-      this.Hover[this.whichHover] = 0;
+      this.Hover[this.whichHover] =5;
     }
     this.whichHover = 'none';
     this._djikstraService.hoverLink.next('none');
@@ -116,7 +119,7 @@ export class AppComponent implements OnInit {
     let counter = 0;
     for(let i = 0; i<len; i++){
       if(counter<4){
-        this.sffxOptions.push([this.searchInput.content + mySuffixes[i], '#fff']);
+        this.sffxOptions.push([this.searchInput.content + mySuffixes[i], '#e9e9e9']);
       } else {
         break;
       }
@@ -127,21 +130,21 @@ export class AppComponent implements OnInit {
   handleArrow(event){
     if(event.keyCode == 40){
       if(this.selectedSffx == undefined || this.selectedSffx == this.sffxOptions.length-1){
-        this.sffxOptions[this.sffxOptions.length-1][1] = "#ffffff";
+        this.sffxOptions[this.sffxOptions.length-1][1] = "#e9e9e9";
         this.selectedSffx = 0;
         this.sffxOptions[0][1] = "#cee2ff";
       } else {
-        this.sffxOptions[this.selectedSffx][1] = "#ffffff";
+        this.sffxOptions[this.selectedSffx][1] = "#e5e5e5";
         this.selectedSffx ++;
         this.sffxOptions[this.selectedSffx][1] = "#cee2ff";
       }
     } else if(event.keyCode == 38) {
       if(this.selectedSffx == undefined || this.selectedSffx == 0){
-        this.sffxOptions[0][1] = "#ffffff";
+        this.sffxOptions[0][1] = "#e5e5e5";
         this.selectedSffx = this.sffxOptions.length-1;
         this.sffxOptions[this.selectedSffx][1] = "#cee2ff";
       } else {
-        this.sffxOptions[this.selectedSffx][1] = "#ffffff";
+        this.sffxOptions[this.selectedSffx][1] = "#e5e5e5";
         this.selectedSffx --;
         this.sffxOptions[this.selectedSffx][1] = "#cee2ff";
       }
@@ -187,7 +190,7 @@ export class AppComponent implements OnInit {
       ["favorite pop song", "<h4>Call Me Maybe</h4>"], ["favorite song", "<h4>Ghost Beach - Miracle (Trails and Ways cover)</h4>"], ["song that makes me happy-sad", "<h4>Porter Robinson & Madeon - Shelter</h4>"],
       ["greatest work accomplishment", "<p>Creating and deploying the Renew Physical Therapy website (which, two years later, has been changed).</p>"], ["hometown", "<h4>Edmonds</h4><p>(not so far huh?)</p>"],
       ["most cringy moment", "<p>That time with the pen and the nice older ladies. Urkh.</p>"], ["preferred method of contact", "<a href='mailto:rwaugh52@gmail.com'><h4>Gmail</h4></a>"],
-      ["dislikes", "<p>Things touching my neck lightly, being cut off (without cause), Closed mindedness.</p>"], ['best photograph', "<img src='../assets/images/carKeek.jpg' class='w-75 shadow-lg'>"],
+      ["dislikes", "<p>Things touching my neck lightly, being cut off (without cause), Closed mindedness.</p>"], ['best photograph', "<img src='../assets/images/carkeek.jpg' class='w-75 shadow-lg'>"],
       ['likes', "<p>Almost everything including</p><ul class='list-unstyled'><li>&#149; People, esp. who are excited about something niche.</li><li>&#149; Learning</li><li>&#149; Programming!</li><li>&#149; The internet!</li>"],
       ['least original personal thought', "<p>'Boy do I love North Face and Pumpkin Spice Lattes'</p>"], ['which coding bootcamp?', '<h4>Coding dojo</h4>'], ['languages', "<p>I know C#, Python, Java- and TypeScript, and of course HTML, CSS, blah blah blah"],
       ['hobbies', '<p>My hobbies include hiking, programming (naturally), weightlifting, cafes, and when I have a job, things like VR and not eating frozen dinners!</p>'],
@@ -205,6 +208,7 @@ export class AppComponent implements OnInit {
       ['python', "<p>A language which I am extremely familiar with; perhaps more so than any other. Loosely-typed, and great for data science. Pairs nicely with Django!"], ['javascript', "<p>Another language I'm very familiar with, as are most Coding Dojo graduates. Loosely-typed, language of the web!"],
       ['typescript', "<p>A language which deserves my respect (as it is the language of this site). Strictly-typed for better workflow!</p>"], ['c#', "<p>The strictly-typed language of well...Microsoft...but also many a Seattle company! Like learning to drive manual. Invites less ambiguity."],
       ['education', "<p><span class='font-weight-bold'>Coding Dojo</span><br> 14 Week Web Dev program - Triple 'Black belt'<br><br><span class='font-weight-bold'>Washington State University</span><br> Political Science - 3.66 GPA</p>"],
+      ['secret', "<p>Click and drag amongst the stars..</p>"],
     ]
     for(let option of optionList){
       this.myTrie.add(option[0], option[1]);

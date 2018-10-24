@@ -224,11 +224,11 @@ export class DjikstraComponent implements OnInit {
   }
 
   initCanvas(){
-    let starY = this.canvas.height - 20,
+    let starY = this.canvas.height - 25,
       starX = this.canvas.width - 60,
       midX = (this.canvas.width/2),
       midY = (this.canvas.height/2),
-      starMaker = [[midX, midY],[60,20, 'about'], [starX,20, 'draftChat'], [60,starY, 'userDash'], [starX,starY, 'unTitled']];
+      starMaker = [[midX, midY],[60,25, 'about'], [starX,25, 'draftChat'], [60,starY, 'userDash'], [starX,starY, 'unTitled']];
     this.mpX = midX - 100;
     this.mpY = midY - 100;
     for(let star of starMaker){
